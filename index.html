@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width = device-width, initial-scale = 1.0">
+        <title>registration page</title>
+    </head>
+    <body>
+        <form id = "registration" onsubmit = "validateForm()" >
+            <label for = "name">full name:</label>
+            <input type = "text" id = "name"requried><br>
+            <label for = "Roll number">Roll number:</label>
+            <input type="text" id = "Roll number" required><br>
+            <label for ="email">email:</label>
+            <input type = "text" id = "email" required><br>
+            <label for="phone number">phone number:</label>
+            <input type="text" id="phn number"requried pattern="[0-9]{10}"><br>
+            <button type="submit">REGISTER</button>
+        </form>
+        <script>
+            function validateForm(){
+                const phonenumber = document.getElementById('phone number').value;
+                const phoneRegex = /^\d{10}$/;
+                if(!phoneRegex.test(phonenumber)){
+                    alert('Invalid');
+                    return false;
+                }
+                alert('Registration Successful!');
+                return true;
+            }
+            </script>
+    </body>
+</html>
